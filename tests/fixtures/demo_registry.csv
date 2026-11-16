@@ -1,0 +1,3 @@
+national_id,name,city,activity,registered_at,website,phone,prior_export,checked_at,ref_url
+00000000001,فولاد نمونه آلفا,اصفهان,تولید و صادرات محصولات فولادی,1390/05/10,,031-00000000,yes,2026-11-01,SYNTHETIC
+00000000002,پتروشیمی نمونه بتا,ماهشهر,تولید محصولات پلیمری,1385/02/01,example.invalid,,no,2026-11-01,SYNTHETIC

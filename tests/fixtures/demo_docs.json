@@ -1,0 +1,88 @@
+[
+ {
+  "source": "html:tenders_demo",
+  "source_group": "tenders",
+  "url": "https://example.invalid/tender/1",
+  "text": "آگهی استعلام بها حمل ۳٬۰۰۰ تن میلگرد از بندر شهید رجایی به ام‌القصر عراق. کارفرما: شرکت فولاد نمونه آلفا. مهلت ۱۴۰۵/۰۹/۱۰",
+  "published_at": "2026-11-12",
+  "company_hint": "فولاد نمونه آلفا"
+ },
+ {
+  "source": "codal:material_disclosure",
+  "source_group": "codal",
+  "url": "https://example.invalid/codal/1",
+  "text": "افشای اطلاعات با اهمیت\nانعقاد قرارداد فروش صادراتی ۵۰ هزار تن شمش فولاد",
+  "published_at": "1405/08/19",
+  "company_hint": "فولاد نمونه آلفا"
+ },
+ {
+  "source": "news:demo",
+  "source_group": "news",
+  "url": "https://example.invalid/news/1",
+  "text": "پتروشیمی نمونه بتا: بهره‌برداری از واحد جدید پلی‌اتیلن در ۱۴۰۵/۱۰/۱۵ انجام می‌شود",
+  "published_at": "2026-11-05"
+ },
+ {
+  "source": "html:jobs_demo",
+  "source_group": "jobs",
+  "url": "https://example.invalid/job/1",
+  "text": "استخدام کارشناس بازرگانی خارجی مسلط به اینکوترمز",
+  "published_at": "2026-11-01",
+  "company_hint": "پتروشیمی نمونه بتا"
+ },
+ {
+  "source": "html:expo_demo",
+  "source_group": "exhibitions",
+  "url": "https://example.invalid/expo/1",
+  "text": "فهرست غرفه‌داران پاویون ملی ایران در نمایشگاه خارجی",
+  "published_at": "2026-10-20",
+  "company_hint": "پتروشیمی نمونه بتا"
+ },
+ {
+  "source": "telegram:demo_ch1",
+  "source_group": "social",
+  "channel": "demo_ch1",
+  "url": "https://example.invalid/t/1",
+  "text": "اعلام بار: ۲۴ تن پسته از رفسنجان به مرز دوغارون. تماس 09120000000",
+  "published_at": "2026-11-15"
+ },
+ {
+  "source": "telegram:demo_ch2",
+  "source_group": "social",
+  "channel": "demo_ch2",
+  "url": "https://example.invalid/t/2",
+  "text": "اعلام بار: ۲۴ تن پسته از رفسنجان به مرز دوغارون. تماس 09120000000",
+  "published_at": "2026-11-15"
+ },
+ {
+  "source": "telegram:demo_ch3",
+  "source_group": "social",
+  "channel": "demo_ch3",
+  "url": "https://example.invalid/t/3",
+  "text": "اعلام بار: ۲۴ تن پسته از رفسنجان به مرز دوغارون. تماس 09120000000",
+  "published_at": "2026-11-15"
+ },
+ {
+  "source": "telegram:demo_ch4",
+  "source_group": "social",
+  "channel": "demo_ch4",
+  "url": "https://example.invalid/t/4",
+  "text": "اعلام بار: ۲۴ تن پسته از رفسنجان به مرز دوغارون. تماس 09120000000",
+  "published_at": "2026-11-15"
+ },
+ {
+  "source": "telegram:demo_ch5",
+  "source_group": "social",
+  "channel": "demo_ch5",
+  "url": "https://example.invalid/t/5",
+  "text": "اعلام بار: ۲۴ تن پسته از رفسنجان به مرز دوغارون. تماس 09120000000",
+  "published_at": "2026-11-15"
+ },
+ {
+  "source": "news:demo",
+  "source_group": "news",
+  "url": "https://example.invalid/news/2",
+  "text": "کاهش عوارض صادراتی محصولات پتروشیمی از ابتدای آذر",
+  "published_at": "2026-11-14"
+ }
+]

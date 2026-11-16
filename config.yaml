@@ -1,0 +1,38 @@
+# Freight Intel configuration. Empty lists collect nothing; fill them before the first run.
+user_agent: "FreightIntelBot/0.1 (+contact: your-email@your-domain)"
+min_delay_seconds: 3            # per domain
+respect_robots: true
+storage: data/freight_intel.sqlite
+registry_csv: data/registry.csv     # manual lookups from rrk.ir / ilenc.ir (see freight_intel/resolve.py)
+calibration_path: data/calibration.json
+
+sources:
+  telegram_channels: []         # public channels via t.me/s (hourly)
+  telegram_pages: 2
+  telegram_api: {channels: []}  # Telethon; needs TELEGRAM_API_ID / TELEGRAM_API_HASH
+  google_news_queries:          # daily
+    - "نخستین محموله صادراتی"
+    - "قرارداد فروش صادراتی"
+    - "استعلام حمل کانتینر"
+    - "بهره برداری خط تولید صادرات"
+    - "پاویون ملی ایران نمایشگاه"
+    - "رفع ممنوعیت صادرات"
+    - "صف کامیون مرز"
+    - "قطار باری کریدور"
+  rss_feeds: []                 # industry news RSS URLs (daily)
+  codal: {symbols: []}          # disclosures + monthly reports of target symbols (daily)
+  ime_excel_paths: []           # IME trade reports already downloaded
+  gazette_csv_paths: []         # rrk.ir notices typed into CSV (see sources/gazette_csv.py)
+  html_lists: []                # tenders / jobs / exhibitors / B2B / freight boards (see sources/html_list.py)
+  # comtrade: {reporters: [TR, IQ, AE, CN, RU], hs_codes: ["3901", "7214", "0804"], period: 2025}
+
+ime_columns:                    # map IME report column titles if they differ
+  commodity: "نام کالا"
+  supplier: "تولید کننده"
+  volume: "حجم قرارداد"
+  delivery_place: "محل تحویل"
+  trade_date: "تاریخ معامله"
+  hall: "تالار"
+
+# ime_download: {...}          # Playwright recipe, see freight_intel/sources/ime_download.py
+# ais: {...}                   # paid AIS provider, see freight_intel/sources/ais.py

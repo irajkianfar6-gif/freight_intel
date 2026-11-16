@@ -1,0 +1,4 @@
+# m h dom mon dow  command   (alternative to scripts/run_loop.sh)
+5 * * * *   cd /opt/freight_intel && python -m freight_intel.cli run --due-only >> logs/run.log 2>&1
+20 * * * *  cd /opt/freight_intel && python -m freight_intel.cli push-monday --board $MONDAY_BOARD_ID >> logs/push.log 2>&1
+0 3 1 * *   cd /opt/freight_intel && python -m freight_intel.cli calibrate --from-monday --board $MONDAY_BOARD_ID >> logs/calibrate.log 2>&1

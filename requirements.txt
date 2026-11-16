@@ -1,0 +1,12 @@
+requests>=2.31
+beautifulsoup4>=4.12
+lxml>=5.0
+pyyaml>=6.0
+pandas>=2.0
+openpyxl>=3.1
+scikit-learn>=1.3   # calibration
+rapidfuzz>=3.0      # faster fuzzy name matching (difflib fallback)
+feedparser>=6.0     # optional: robust RSS/Atom
+hazm>=0.10          # optional: Persian normalization
+telethon>=1.34      # optional: Telegram API collector
+playwright>=1.45    # optional: IME report download (then: playwright install chromium)

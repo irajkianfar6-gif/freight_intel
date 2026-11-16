@@ -1,0 +1,315 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Freight lead card",
+  "type": "object",
+  "required": [
+    "lead_id",
+    "shipper",
+    "demand",
+    "cargo",
+    "evidence",
+    "verification",
+    "confidence",
+    "unknowns",
+    "ready_for_sales"
+  ],
+  "properties": {
+    "lead_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "shipper": {
+      "type": "object",
+      "properties": {
+        "company_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "national_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{11}$"
+        },
+        "registry_similarity": {
+          "type": "number"
+        },
+        "industry": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "contact_phones_public": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "website": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "demand": {
+      "type": "object",
+      "required": [
+        "demand_type",
+        "demand_class",
+        "demand_score"
+      ],
+      "properties": {
+        "demand_type": {
+          "enum": [
+            "immediate",
+            "potential"
+          ]
+        },
+        "demand_class": {
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "definite"
+          ]
+        },
+        "demand_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "score_breakdown": {
+          "type": "object"
+        },
+        "ship_window": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "from": {
+              "type": "string",
+              "format": "date"
+            },
+            "to": {
+              "type": "string",
+              "format": "date"
+            },
+            "basis": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "uncertain": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "cargo": {
+      "type": "object",
+      "properties": {
+        "commodity": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "hs_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "qty": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "unit": {
+              "enum": [
+                "MT",
+                "TEU"
+              ]
+            },
+            "estimated": {
+              "type": "boolean"
+            }
+          }
+        },
+        "origin_city": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "origin_city_basis": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "exit_point": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "destination_country": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[A-Z]{2}$"
+        },
+        "suggested_mode": {
+          "enum": [
+            "road",
+            "sea",
+            "rail",
+            "multimodal",
+            null
+          ]
+        },
+        "incoterm_observed": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "signal_code",
+          "source"
+        ],
+        "properties": {
+          "signal_code": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "published_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "retrieved_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "extract": {
+            "type": "string"
+          },
+          "source_reliability": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "enum": [
+            "V0",
+            "V1",
+            "V2",
+            "V3"
+          ]
+        },
+        "checks": {
+          "type": "array"
+        },
+        "rejected": {
+          "type": "boolean"
+        },
+        "reject_reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "sanctions_screening": {
+          "type": "object"
+        }
+      }
+    },
+    "confidence": {
+      "type": "object",
+      "properties": {
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "deductions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              },
+              "points": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ready_for_sales": {
+      "type": "boolean"
+    }
+  }
+}
